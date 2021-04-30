@@ -13,14 +13,16 @@
     <main class="site-content">
       <form list-form>
         <div class="input-and-button">
-          <input type="text" list-input-name />
-          <input type="text" list-input-amount />
-          <button>Lägg till som inkomst</button>
-          <button>Lägg till som utgift</button>
+          <input type="text" id="list-input-name" name="name" />
+          <input type="number" id="list-input-amount" name="amount" />
+          <button id="income-button">Lägg till som inkomst</button>
+          <button id="expense-button">Lägg till som utgift</button>
         </div>
       </form>
-      <h1 id="list-title">Inkomster:</h1>
-      <div id="list-container"></div>
+      <h1 id="income-list-title">Inkomster:</h1>
+      <div id="income-list-container"></div>
+      <h1 id="expenses-list-title">Utgifter:</h1>
+      <div id="expenses-list-container"></div>
     </main>
     <footer></footer>
   </body>
