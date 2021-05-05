@@ -6,24 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projekt 4</title>
     <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="main.js"></script>
   </head>
-  <body>
-    <header></header>
+  <body class="site">
+    <header>
+      <h1>Wilmer's Budgetsida</h1>
+    </header>
     <main class="site-content">
-      <form list-form>
-        <div class="input-and-button">
-          <input type="text" id="list-input-name" name="name" />
-          <input type="number" id="list-input-amount" name="amount" />
-          <button id="income-button">Lägg till som inkomst</button>
-          <button id="expense-button">Lägg till som utgift</button>
+      <form>
+        <div class="budget-form">
+          <input type="text" id="budget-input" name="budget" />
+          <button id="budget-button">Lägg till budget</button>
+        </div>
+        <div class="expense-form">
+          <input type="text" id="expense-input-name" name="name" />
+          <input type="number" id="expense-input-amount" name="amount" />
+          <button id="expense-button">Lägg till utgift</button>
         </div>
       </form>
-      <h1 id="income-list-title">Inkomster:</h1>
-      <div id="income-list-container"></div>
-      <h1 id="expenses-list-title">Utgifter:</h1>
-      <div id="expenses-list-container"></div>
+      <div class="titles-and-containers">
+        <div class="budget-title-and-value">
+          <h1 id="budget-title">Budget:</h1>
+          <div id="budget-value-container"></div>
+        </div>
+        <div class="expense-title-and-list">
+          <h1 id="expense-title">Utgifter:</h1>
+          <div id="expense-list-container"></div>
+        </div>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <p>© 2021</p>
+    </footer>
   </body>
 </html>

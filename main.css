@@ -3,19 +3,58 @@ body {
   padding: 0;
 }
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 form {
+  display: flex;
+  justify-content: center;
+}
+
+.expense-form {
   display: flex;
   justify-content: center;
   padding: 2rem;
 }
 
-#list-container {
+.budget-form {
   display: flex;
   justify-content: center;
+  padding: 2rem;
 }
 
-.input-and-button {
+.budget-title-and-value {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.expense-title-and-list {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+header,
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(44, 44, 44);
+  color: white;
+}
+
+h1,
+a,
+p,
+li,
+button,
+input[type="text"] {
+  font-family: "Slabo 27px", serif;
 }

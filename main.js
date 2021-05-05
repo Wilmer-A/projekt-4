@@ -1,49 +1,43 @@
-let incomeListItems = [];
-let expenseListItems = [];
-let inputName = document.querySelector("[list-input-name]");
-let inputAmount = document.querySelector("[list-input-amount]");
-let listForm = document.querySelector("[list-form]");
-let incomeListContainer = document.querySelector("#income-list-container");
-let expenseListContainer = document.querySelector("#expenses-list-container");
-
-let incomeButton = document.querySelector("#income-button");
-incomeButton.classList.add("income-button");
-incomeButton.addEventListener("click", incomeOrExpense);
+let budgetValue = [0];
+let expenseListItems = ["test"];
+let inputName = document.querySelector("#expense-input-name");
+let inputAmount = document.querySelector("#expense-input-amount");
+let inputBudget = document.querySelector("#budget-input");
+let budgetForm = document.querySelector(".budget-form");
+let expenseForm = document.querySelector(".expense-form");
+let budgetValueContainer = document.querySelector("#budget-value-container");
+let expenseListContainer = document.querySelector("#expense-list-container");
+let budgetButton = document.querySelector("#budget-button");
+//budgetButton.classList.add("income-button");
+//budgetButton.addEventListener("click", incomeOrExpense);
 let expenseButton = document.querySelector("#expense-button");
-expenseButton.classList.add("expense-button");
-expenseButton.addEventListener("click", incomeOrExpense);
+//expenseButton.classList.add("expense-button");
+//expenseButton.addEventListener("click", incomeOrExpense);
 
-function incomeOrExpense (event) {
-    let targetButton = event.target;
-    if (targetButton.classList.contains("income-button")){
-        targetButton.classList.add("income-item");
-        targetButton.classList.remove("expense-item");
+budgetForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (inputBudget.trim() === "") {
+        return;
     }
-    if (targetButton.classList.contains("expense-button")){
-        targetButton.classList.add("expense-item");
-        targetButton.classList.remove("income-item");
-    }
-}
+    budgetValue.push(inputBudget.trim());
+    updateList();
+    document.querySelector(".budget-form").reset();
+});
 
-listForm.addEventListener("submit", (event) => {
+expenseForm.addEventListener("submit", (event) => {
     event.preventDefault();
     let nameAmountObject = {
         id: Date.now(),
-        name: document.getElementById("list-input-name").value,
-        amount: document.getElementById("list-input-amount").value
+        name: document.getElementById("expense-input-name").value,
+        amount: document.getElementById("expense-input-amount").value
     }
     console.log(nameAmountObject);
     if (nameAmountObject.name.trim() === "" || nameAmountObject.amount.trim() === "") {
         return;
     }
-    if (incomeButton.classList.contains("income-item")){
-        incomeListItems.push(nameAmountObject.name.trim() + ": " + nameAmountObject.amount.trim());
-    }
-    if (incomeButton.classList.contains("expense-item")){
-        expenseListItems.push(nameAmountObject.name.trim() + ": " + nameAmountObject.amount.trim());
-    }
+    expenseListItems.push(nameAmountObject.name.trim() + ": " + nameAmountObject.amount.trim());
     updateList();
-    document.querySelector('form').reset();
+    document.querySelector(".expense-form").reset();
 });
 
 function createList(items) {
@@ -51,17 +45,20 @@ function createList(items) {
     items.forEach((item) => {
         let newListItem = document.createElement("li");
         newListItem.innerText = item;
-        newListItem.classList.add("object-text");
+        //newListItem.classList.add("");
         itemList.append(newListItem);
     });
     return itemList;
 }
 
 function updateList() {
-    incomeListContainer.innerHTML = "";
     expenseListContainer.innerHTML = "";
-    incomeListContainer.append(createList(incomeListItems));
     expenseListContainer.append(createList(expenseListItems));
+}
+
+function updateValue() {
+    budgetValueContainer.innerHTML = "";
+    budgetValueContainer.append(createList(budgetValue));
 }
 
 updateList();
