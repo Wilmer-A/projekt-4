@@ -1,5 +1,5 @@
 let budgetValue = [0];
-let expenseListItems = ["test"];
+let expenseListItems = ["(test)"];
 let inputName = document.querySelector("#expense-input-name");
 let inputAmount = document.querySelector("#expense-input-amount");
 let inputBudget = document.querySelector("#budget-input");

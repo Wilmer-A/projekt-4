@@ -15,16 +15,35 @@
   <body class="site">
     <header>
       <h1>Wilmer's Budgetsida</h1>
+      <nav>
+        <a href="index.html">Budgetplanerare</a>
+        <a href="delsida1.html">Ekonomitabeller</a>
+      </nav>
     </header>
     <main class="site-content">
       <form>
         <div class="budget-form">
-          <input type="text" id="budget-input" name="budget" />
+          <input
+            type="number"
+            id="budget-input"
+            name="budget"
+            placeholder="Din budget"
+          />
           <button id="budget-button">Lägg till budget</button>
         </div>
         <div class="expense-form">
-          <input type="text" id="expense-input-name" name="name" />
-          <input type="number" id="expense-input-amount" name="amount" />
+          <input
+            type="text"
+            id="expense-input-name"
+            name="name"
+            placeholder="Namn på utgiften"
+          />
+          <input
+            type="number"
+            id="expense-input-amount"
+            name="amount"
+            placeholder="Utgiftens pris"
+          />
           <button id="expense-button">Lägg till utgift</button>
         </div>
       </form>

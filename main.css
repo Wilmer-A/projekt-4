@@ -55,6 +55,6 @@ a,
 p,
 li,
 button,
-input[type="text"] {
+input {
   font-family: "Slabo 27px", serif;
 }
