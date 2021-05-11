@@ -1,43 +1,42 @@
-let budgetValue = [0];
-let expenseListItems = ["(test)"];
-let inputName = document.querySelector("#expense-input-name");
-let inputAmount = document.querySelector("#expense-input-amount");
+let budgetValue = 0;
+budgetValue += " kronor";
+let expenseListItems = []
 let inputBudget = document.querySelector("#budget-input");
-let budgetForm = document.querySelector(".budget-form");
-let expenseForm = document.querySelector(".expense-form");
+let inputName = document.querySelector("[expense-input-name]");
+let inputAmount = document.querySelector("[expense-input-amount]");
+let budgetForm = document.querySelector('[budget-form]');
+let expenseForm = document.querySelector('[expense-form]');
 let budgetValueContainer = document.querySelector("#budget-value-container");
 let expenseListContainer = document.querySelector("#expense-list-container");
 let budgetButton = document.querySelector("#budget-button");
-//budgetButton.classList.add("income-button");
-//budgetButton.addEventListener("click", incomeOrExpense);
 let expenseButton = document.querySelector("#expense-button");
-//expenseButton.classList.add("expense-button");
-//expenseButton.addEventListener("click", incomeOrExpense);
 
 budgetForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (inputBudget.trim() === "") {
+    if (inputBudget.value.trim() === "") {
         return;
     }
-    budgetValue.push(inputBudget.trim());
-    updateList();
-    document.querySelector(".budget-form").reset();
+    budgetValue = inputBudget.value.trim();
+    budgetValue += " kronor";
+    updateBudget();
+    document.getElementById('budget-input').value = "";
 });
 
 expenseForm.addEventListener("submit", (event) => {
     event.preventDefault();
     let nameAmountObject = {
         id: Date.now(),
-        name: document.getElementById("expense-input-name").value,
-        amount: document.getElementById("expense-input-amount").value
+        name: document.getElementById('expense-input-name').value,
+        amount: document.getElementById('expense-input-amount').value
     }
     console.log(nameAmountObject);
     if (nameAmountObject.name.trim() === "" || nameAmountObject.amount.trim() === "") {
         return;
     }
-    expenseListItems.push(nameAmountObject.name.trim() + ": " + nameAmountObject.amount.trim());
+    expenseListItems.push(nameAmountObject.name.trim() + " - " + nameAmountObject.amount.trim() + " kronor");
     updateList();
-    document.querySelector(".expense-form").reset();
+    document.getElementById('expense-input-name').value = "";
+    document.getElementById('expense-input-amount').value = "";
 });
 
 function createList(items) {
@@ -45,7 +44,7 @@ function createList(items) {
     items.forEach((item) => {
         let newListItem = document.createElement("li");
         newListItem.innerText = item;
-        //newListItem.classList.add("");
+        newListItem.classList.add("object-in-list");
         itemList.append(newListItem);
     });
     return itemList;
@@ -56,9 +55,11 @@ function updateList() {
     expenseListContainer.append(createList(expenseListItems));
 }
 
-function updateValue() {
+function updateBudget() {
     budgetValueContainer.innerHTML = "";
-    budgetValueContainer.append(createList(budgetValue));
+    budgetValueContainer.append(budgetValue);
 }
 
 updateList();
+
+updateBudget();

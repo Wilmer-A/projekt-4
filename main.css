@@ -13,7 +13,7 @@ body {
   flex: 1;
 }
 
-form {
+.both-forms {
   display: flex;
   justify-content: center;
 }

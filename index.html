@@ -17,44 +17,54 @@
       <h1>Wilmer's Budgetsida</h1>
       <nav>
         <a href="index.html">Budgetplanerare</a>
-        <a href="delsida1.html">Ekonomitabeller</a>
+        <a href="delsida1.html">Senaste nytt om ekonomin</a>
       </nav>
     </header>
     <main class="site-content">
-      <form>
-        <div class="budget-form">
-          <input
-            type="number"
-            id="budget-input"
-            name="budget"
-            placeholder="Din budget"
-          />
-          <button id="budget-button">Lägg till budget</button>
-        </div>
-        <div class="expense-form">
-          <input
-            type="text"
-            id="expense-input-name"
-            name="name"
-            placeholder="Namn på utgiften"
-          />
-          <input
-            type="number"
-            id="expense-input-amount"
-            name="amount"
-            placeholder="Utgiftens pris"
-          />
-          <button id="expense-button">Lägg till utgift</button>
-        </div>
-      </form>
+      <div class="both-forms">
+        <form budget-form>
+          <div class="budget-form">
+            <input
+              type="number"
+              id="budget-input"
+              name="budget"
+              placeholder="Din budget"
+            />
+            <button id="budget-button">Lägg till budget</button>
+          </div>
+        </form>
+        <form expense-form>
+          <div class="expense-form">
+            <input
+              type="text"
+              id="expense-input-name"
+              name="name"
+              placeholder="Namn på utgiften"
+            />
+            <input
+              type="number"
+              id="expense-input-amount"
+              name="amount"
+              placeholder="Utgiftens pris"
+            />
+            <button id="expense-button">Lägg till utgift</button>
+          </div>
+        </form>
+      </div>
       <div class="titles-and-containers">
         <div class="budget-title-and-value">
-          <h1 id="budget-title">Budget:</h1>
+          <h1 id="budget-title">Din budget:</h1>
           <div id="budget-value-container"></div>
         </div>
         <div class="expense-title-and-list">
-          <h1 id="expense-title">Utgifter:</h1>
+          <h1 id="expense-title">Lista av dina utgifter:</h1>
           <div id="expense-list-container"></div>
+        </div>
+        <div>
+          <h1>Totalt värde av utgifter:</h1>
+        </div>
+        <div>
+          <h1>Ditt saldo:</h1>
         </div>
       </div>
     </main>
