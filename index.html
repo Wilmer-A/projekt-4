@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projekt 4</title>
+    <title>Projekt 4 - Budgetsida</title>
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/originals/2d/49/e9/2d49e9bca7b675ae35300a2dd617e1aa.png"
+    />
     <link rel="stylesheet" href="main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap"
       rel="stylesheet"
     />
     <script defer src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/159ff62a78.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="site">
     <header>
       <h1>Wilmer's Budgetsida</h1>
       <nav>
         <a href="index.html">Budgetplanerare</a>
-        <a href="delsida1.html">Senaste nytt om ekonomin</a>
+        <a href="delsida1.html">Samhällsekonomin</a>
       </nav>
     </header>
     <main class="site-content">
@@ -28,26 +36,32 @@
               type="number"
               id="budget-input"
               name="budget"
-              placeholder="Din budget"
+              placeholder="Din budget (SEK)"
             />
-            <button id="budget-button">Lägg till budget</button>
+            <button id="budget-button">
+              <i class="fas fa-plus-circle"></i>
+            </button>
           </div>
         </form>
         <form expense-form>
           <div class="expense-form">
-            <input
-              type="text"
-              id="expense-input-name"
-              name="name"
-              placeholder="Namn på utgiften"
-            />
-            <input
-              type="number"
-              id="expense-input-amount"
-              name="amount"
-              placeholder="Utgiftens pris"
-            />
-            <button id="expense-button">Lägg till utgift</button>
+            <div class="expense-input-fields">
+              <input
+                type="text"
+                id="expense-input-name"
+                name="name"
+                placeholder="Namn på utgiften"
+              />
+              <input
+                type="number"
+                id="expense-input-amount"
+                name="amount"
+                placeholder="Utgiftens pris (SEK)"
+              />
+            </div>
+            <button id="expense-button">
+              <i class="fas fa-plus-circle"></i>
+            </button>
           </div>
         </form>
       </div>
@@ -60,11 +74,13 @@
           <h1 id="expense-title">Lista av dina utgifter:</h1>
           <div id="expense-list-container"></div>
         </div>
-        <div>
+        <div class="total-title-and-list">
           <h1>Totalt värde av utgifter:</h1>
+          <div id="total-expenses-container"></div>
         </div>
-        <div>
+        <div class="balance-title-and-list">
           <h1>Ditt saldo:</h1>
+          <div id="balance-container"></div>
         </div>
       </div>
     </main>

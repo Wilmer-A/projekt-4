@@ -24,21 +24,47 @@ body {
   padding: 2rem;
 }
 
+.expense-input-fields {
+  display: flex;
+  justify-content: center;
+}
+
 .budget-form {
   display: flex;
   justify-content: center;
   padding: 2rem;
 }
 
+.titles-and-containers {
+  display: flex;
+  justify-content: center;
+}
+
 .budget-title-and-value {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2rem;
 }
 
 .expense-title-and-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.total-title-and-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.balance-title-and-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -46,15 +72,140 @@ header,
 footer {
   padding: 1rem;
   text-align: center;
-  background-color: rgb(44, 44, 44);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(background-image.jpg);
   color: white;
+}
+
+header h1 {
+  user-select: none;
+  font-size: 2.3rem;
+}
+
+footer p {
+  font-size: 1.3rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.generated-text,
+li {
+  font-size: 1.2rem;
 }
 
 h1,
 a,
 p,
 li,
-button,
-input {
+input,
+.generated-text {
   font-family: "Slabo 27px", serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.fa-times-circle {
+  pointer-events: none;
+  color: rgb(212, 19, 19);
+  font-size: 1.3rem;
+}
+
+.fa-plus-circle {
+  pointer-events: none;
+}
+
+#budget-button,
+#expense-button {
+  background: rgb(10, 185, 10);
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  transition: all 0.4s ease;
+  padding: 0.3rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  margin-right: 0rem;
+  margin-left: 1rem;
+}
+
+.titles-and-containers h1 {
+  font-size: 1.7rem;
+}
+
+form input,
+form button {
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: black;
+  border-style: solid;
+  border-width: 0.1rem;
+}
+
+#economy-info {
+  margin: 1rem;
+  border-style: dotted;
+  border-color: red;
+  padding: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .both-forms {
+    flex-direction: column;
+  }
+
+  .titles-and-containers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expense-form {
+    padding-bottom: 1rem;
+  }
+
+  .expense-input-fields {
+    flex-direction: column;
+  }
+
+  .balance-title-and-list {
+    padding-bottom: 3rem;
+  }
+
+  .budget-form {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .budget-title-and-value {
+    padding-bottom: 1rem;
+  }
+
+  .expense-title-and-list {
+    padding-bottom: 1rem;
+  }
+
+  .total-title-and-list {
+    padding-bottom: 1rem;
+  }
 }
